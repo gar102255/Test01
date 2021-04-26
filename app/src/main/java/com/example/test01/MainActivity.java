@@ -5,14 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.text.DecimalFormat;
 
 public class MainActivity extends AppCompatActivity {
 
     private EditText height;
     private EditText weight;
     private TextView showbmi;
-    private String b;
+    private ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         height = findViewById(R.id.edHeight);
         weight = findViewById(R.id.edWeight);
         showbmi = findViewById(R.id.tvShowBMI);
+        imageView = findViewById(R.id.ivShow);
     }
 
     public void calBMI(View view) {
@@ -30,16 +34,20 @@ public class MainActivity extends AppCompatActivity {
             double h = Double.parseDouble(height.getText().toString());
             double w = Double.parseDouble(weight.getText().toString());
             double bmi = w / ((h/100.0) * (h/100.0));
-            b = String.format("%.1f",bmi);
-            showbmi.setText(String.valueOf(b));
+            String txt = "";
             if(bmi < 18.5){
-                showbmi.setText(b+" 體重過輕");
-            }else if(bmi >= 18.5 && bmi <= 23.9){
-                showbmi.setText(b+" 體重正常");
+                txt ="體重過輕";
+                imageView.setImageResource(R.drawable.a1);
+            }else if(bmi >25){
+                txt ="體重過重";
+                imageView.setImageResource(R.drawable.a3);
             }
-            else if(bmi >= 24 && bmi <= 27.9){
-                showbmi.setText(b+" 體重過重");
+            else {
+                txt ="體重正常";
+                imageView.setImageResource(R.drawable.a2);
             }
+            DecimalFormat decimalFormat = new DecimalFormat("#.##");
+            showbmi.setText(decimalFormat.format(bmi)+txt);
         }
 
     }
