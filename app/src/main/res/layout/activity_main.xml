@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="12dp"
-        android:text="身高(cm)"
+        android:text="@string/height"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ivShowBMI" />
@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:text="體重(kg)"
+        android:text="@string/weight"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintStart_toStartOf="@+id/tvHeight"
         app:layout_constraintTop_toBottomOf="@+id/tvHeight" />
@@ -31,13 +31,15 @@
         android:id="@+id/tvShowBMI"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="160dp"
-        android:text="BMI="
+        android:layout_marginTop="148dp"
+        android:text="@string/bmi"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.119"
+        app:layout_constraintHorizontal_bias="0.105"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvWeight" />
+        app:layout_constraintTop_toBottomOf="@+id/tvWeight"
+        app:layout_constraintVertical_bias="0.003" />
 
     <EditText
         android:id="@+id/edHeight"
@@ -65,7 +67,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
         android:onClick="calBMI"
-        android:text="計算BMI"
+        android:text="@string/sumit"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -76,14 +78,14 @@
 
     <ImageView
         android:id="@+id/ivShow"
-        android:layout_width="104dp"
-        android:layout_height="280dp"
+        android:layout_width="87dp"
+        android:layout_height="234dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintHorizontal_bias="0.442"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btSutmit"
-        app:layout_constraintVertical_bias="0.747"
+        app:layout_constraintVertical_bias="0.964"
         app:srcCompat="@drawable/a1" />
 
     <ImageView

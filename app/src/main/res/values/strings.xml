@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Test01</string>
+    <string name="app_name">BMI Calculator</string>
+    <string name="height">Height(cm)</string>
+    <string name="weight">Weight(kg)</string>
+    <string name="bmi">BMI =</string>
+    <string name="sumit">calculate BMI</string>
 </resources>
