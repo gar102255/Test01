@@ -40,9 +40,6 @@ public class MainActivity extends AppCompatActivity {
             else if(bmi >= 24 && bmi <= 27.9){
                 showbmi.setText(b+" 體重過重");
             }
-            else if(bmi >= 28){
-                showbmi.setText(b+" 肥胖");
-            }
         }
 
     }
